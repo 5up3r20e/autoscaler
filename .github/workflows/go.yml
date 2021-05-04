@@ -1,0 +1,20 @@
+name: test
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+
+jobs:
+
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Test
+      run: echo "exciting"
